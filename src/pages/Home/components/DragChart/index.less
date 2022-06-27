@@ -1,0 +1,33 @@
+@checkWidgetsConBgColor:#023961f0;
+@boxShadow:-2px 2px 5px 1px #3cabdc;
+.dragChart{
+  .chartItem{
+    border: 1px solid #3399cc;
+  }
+  .checkWidgetsCon{
+    width: 50%;
+    height: 65vh;
+    overflow-x: auto;
+    padding: 0 10px;
+    position: absolute;
+    right: 2px;
+    top: 10px;
+    background-color: @checkWidgetsConBgColor;
+    box-shadow: @boxShadow;
+    transition: right 0.5s;
+    z-index: 1;
+    .checkboxLabel{
+      display: inline-block;
+      //min-width: 150px;
+    }
+  }
+  //鼠标移上显示可拖动的图标
+  & :global{
+    .react-grid-item > .react-resizable-handle {
+      visibility: hidden;
+    }
+    .react-grid-item:hover .react-resizable-handle {
+      visibility: visible;
+    }
+  }
+}

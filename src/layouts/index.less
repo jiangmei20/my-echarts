@@ -1,0 +1,21 @@
+.pageLayout {
+  .main {
+    height: calc(100vh - 48px);
+    margin-top: 15px;
+  }
+  & :global {
+    .ant-pro-basicLayout-content {
+      position: relative;
+      margin: 0px;
+      overflow-y: auto;
+    }
+    //搜索宽是inline时用
+    .ant-form-inline > .ant-form-item {
+      margin-bottom: 10px;
+    }
+  }
+  //去掉默认滚动条
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
