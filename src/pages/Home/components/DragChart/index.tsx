@@ -32,12 +32,14 @@ interface DragChartProp {
   /** 监听布局变化 */
   onChangeLayout: (value: any) => any,
   columns?: number,
+  /** 行高，图表的高=拖动的行高*h(多少份高) */
+  rowHeight?: number,
 }
 
 const DragChart = (props: DragChartProp) => {
   let defaultLayout = {
     cols: {lg: 12, md: 10, sm: 6, xs: 4, xxs: 0},
-    rowHeight: 90,
+    rowHeight: props?.rowHeight || 90,
   };
   const {columns = 12, showContentList, customContent, checkWidgetsShow} =
   props || {};
@@ -296,7 +298,7 @@ const DragChart = (props: DragChartProp) => {
         className="layout"
         {...defaultLayout}
         layouts={layouts}
-        onLayoutChange={(layout:any, layouts:any) => onLayoutChange(layout, layouts)}
+        onLayoutChange={(layout: any, layouts: any) => onLayoutChange(layout, layouts)}
         onResizeStop={onResizeStop}
         ref={dragLayoutFunRef}
       >

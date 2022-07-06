@@ -1,8 +1,21 @@
 /**
  * @description :迁徙图
- * @author：jm
- * @email :
+ * @author：蒋梅
+ * @email : 1229961908@qq.com
  * @creatTime : 2022/6/13
+ * @data: {citys: [{
+ *       "name": "贵阳",
+ *       count:2,
+ *     },
+ *       {
+ *         "name": "抚顺",
+ *         count:2,
+ *       },],
+ *     moveLines: [
+ *       {"fromName": "贵阳", "toName": "抚顺"},
+ *       {"fromName": "贵阳", "toName": "抚顺"},
+ *     ]
+ * }
  */
 import React, {useEffect, useRef, useState} from 'react';
 // @ts-ignore
@@ -31,7 +44,6 @@ interface MigrationMapProp {
 
 const MigrationMap = (props: MigrationMapProp) => {
   const {id,dispatch} = props||{};
-  debugger
   const cityList = [
     {name: '北京市', provincial: '北京', value: [116.407526, 39.90403, -14]},
     {name: '上海市', provincial: '上海', value: [121.473701, 31.230416, 44]},

@@ -44,7 +44,8 @@ const BasicRosePie = (props: BasicRosePieProps) => {
         basicRosePieRef.current = undefined;
       }
     };
-  });
+  },[]);
+
   useEffect(() => {
     const idElement = document.getElementById(id);
     if (idElement) {
